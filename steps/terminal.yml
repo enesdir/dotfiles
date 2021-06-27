@@ -1,0 +1,78 @@
+---
+
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/.config/fish'
+    - '~/.config/fish/conf.d'
+    - '~/.config/fish/functions'
+    - '~/.config/git'
+    - '~/.config/starship'
+    - '~/.local/share/history'
+    - '~/.ssh'
+    - '~/.ssh/config.d'
+
+- defaults:
+    link:
+      # when create is true, create parent directories to the link
+      create: true
+      # removes old target if it's a symlink
+      relink: true
+      # force removes the old target, file or folder
+      # if you want to change all dotfiles on this machine to dotfiles in this folder, set force=true
+      # force: true
+      # glob treats * as a wildcard, so perform link operations on all matches
+      glob: true
+
+- create:
+  #  - ~/Desktop
+  #  - ~/Downloads
+  #  - ~/Templates
+  #  - ~/Public
+  #  - ~/Documents
+  #  - ~/Music
+  #  - ~/Library
+  #  - ~/Pictures
+  #  - ~/Movies
+    - '~/.config'
+
+- link:
+    # Terminal:
+    ~/.bash_profile: dotfiles/bash_profile
+    ~/.bashrc: dotfiles/bashrc
+    ~/.zshrc:
+      path: dotfiles/zshrc
+      force: true
+    # omf
+    ~/.config/omf: config/omf/
+    # wtf
+    ~/.config/wtf: config/wtf/
+    # starship
+    ~/.config/starship/config.toml: config/starship/config.toml
+    # fish shell
+    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/conf.d:
+      path: config/fish/conf.d/*.fish
+      glob: true
+    ~/.config/fish/functions:
+      path: config/fish/functions/*.fish
+      glob: true
+
+    # Git:
+    ~/.gitconfig: dotfiles/gitconfig
+    ~/.gitignore_global: dotfiles/gitignore
+    ~/.gitattributes_global: dotfiles/gitattributes
+    ~/.gitmessage_global: dotfiles/gitmessage
+
+    # Tools:
+    ~/.sqliterc: dotfiles/sqliterc
+
+    # Editors:
+    ~/.editorconfig: dotfiles/editorconfig
+
+    # SSH:
+    ~/.ssh/config:
+      path: ssh/config
+      force: true
+      create: true
+

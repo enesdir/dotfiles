@@ -1,0 +1,170 @@
+// Place your settings in this file to overwrite the default settings
+{
+
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "on",
+
+  // Editor:
+  "editor.cursorSurroundingLines": 3,
+  "editor.useTabStops": true,
+  "editor.formatOnPaste": false,
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 100, 120],
+  "editor.roundedSelection": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 100,
+  "editor.renderWhitespace": "boundary",
+  "editor.renderIndentGuides": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.dragAndDrop": false,
+  "editor.folding": false,
+  "editor.glyphMargin": true,
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+  "explorer.confirmDelete": false,
+
+  // Files:
+  "files.autoSave": "onWindowChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.cache": true,
+      "**/.data": true,
+      "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/.idea": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.venv": true,
+    "**/.coverage": true,
+    "**/*.py[co]": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.tmp": true,
+    "**/build/": true,
+    "**/CVS": true,
+    "**/dist/": true,
+    "**/node_modules/": true,
+    "**/www/": true,
+    "package-lock.json": true
+  },
+
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    "*.pyi": "python",
+    "*.bats": "shellscript",
+    "*.env.*": "dotenv",
+    "dockerfile.*": "dockerfile",
+    ".stylelintrc": "json",
+    ".tslintrc": "json",
+    "*.geojson": "json"
+  },
+
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "package-lock.json": true,
+    "yarn.lock": true
+  },
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[tsx]": {
+      "editor.tabSize": 2
+  },
+
+  "[jsx]": {
+      "editor.tabSize": 2
+  },
+
+  "[html]": {
+      "editor.tabSize": 2
+  },
+
+  "[css]": {
+      "editor.tabSize": 2
+  },
+
+
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.showInlineOpenFileAction": false,
+  "git.autorefresh": true,
+  "git.decorations.enabled": true,
+
+  // Theme:
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.showTabs": true,
+
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 0,
+
+  // Stats and telemetry:
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+
+  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.defaultProfile.osx": "/usr/local/bin/fish",
+
+  // Tools, extensions, and languages:
+  "python.linting.pylintEnabled": true,
+  "python.linting.pycodestyleEnabled": false,
+  // "python.pythonPath": "${workspaceFolder}/.venv/bin/python3",
+  "python.pythonPath": "/usr/local/bin/python3",
+
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "gitlens.codeLens.enabled": true,
+  "gitlens.keymap": "alternate",
+
+  "prettier.semi": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+
+  "diffEditor.ignoreTrimWhitespace": false
+}

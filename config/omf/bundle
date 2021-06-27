@@ -1,0 +1,6 @@
+package foreign-env
+package pyenv
+package vcs
+theme agnoster
+theme default
+theme spacefish
