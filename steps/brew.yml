@@ -1,0 +1,6 @@
+---
+
+# Installing dependencies:
+- brewfile:
+    file: brew/Brewfile
+
