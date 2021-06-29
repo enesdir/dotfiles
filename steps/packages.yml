@@ -1,0 +1,24 @@
+---
+
+# Installing dependencies:
+- shell:
+  - brew cleanup
+  - fnm install 14
+  - [install node v14]
+  - fnm use 14
+  - [$(which node), switch node v14]
+  -
+    command: bash -l './packages/npm-global.sh'
+    description: Installing npm global packages
+    stdout: true
+    stderr: true
+  -
+    command: bash -l './packages/yarn-global.sh'
+    description: Installing yarn global packages
+    stdout: true
+    stderr: true
+  -
+    command: bash -l './packages/vscode-extensions.sh'
+    description: Installing vscode extensions
+    stdout: true
+    stderr: true

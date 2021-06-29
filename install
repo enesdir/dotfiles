@@ -33,6 +33,7 @@ run_dotbot () {
 }
 
 run_dotbot 'steps/brew.yml' || true
+run_dotbot 'steps/packages.yml' || true
 if [ "$CODESPACES" = true ]; then
   run_dotbot 'steps/codespaces.yml' || true
 else

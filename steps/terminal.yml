@@ -60,6 +60,7 @@
 
     # Git:
     ~/.gitconfig: dotfiles/gitconfig
+    ~/.gitconfig_local: dotfiles/gitconfig_local
     ~/.gitignore_global: dotfiles/gitignore
     ~/.gitattributes_global: dotfiles/gitattributes
     ~/.gitmessage_global: dotfiles/gitmessage

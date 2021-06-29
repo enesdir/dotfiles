@@ -6,8 +6,11 @@ set -x -g LS_COLORS "di=38;5;27:fi=38;5;7:ln=38;5;51:pi=40;38;5;11:so=38;5;13:or
 # set -x -g LANG en_GB.UTF-8
 set fish_greeting
 
+set -g theme_nerd_fonts yes
+set -g theme_color_scheme nord
+
 # Paths
-test -d $HOME/.dotfiles/bin                              ; and set PATH $HOME/.dotfiles/bin $PATH
+# test -d $HOME/dotfiles/bin                              ; and set PATH $HOME/dotfiles/bin $PATH
 test -d $HOME/.local/bin                                 ; and set PATH $HOME/.local/bin/ $PATH
 test -d /usr/local/sbin                                  ; and set PATH /usr/local/sbin $PATH
 test -x /usr/local/share/git-core/contrib/diff-highlight ; and set PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
@@ -40,7 +43,7 @@ function j         ; jobs ; end
 function v         ; vim ; end
 
 # Gitconfig.user
-test -e $HOME/.extra ; and source $HOME/.extra
+test -e $HOME/.gitconfig_local ; and source $HOME/.gitconfig_local
 
 # Need to install gh via Homebrew
 # See: https://github.com/cli/cli
@@ -83,10 +86,6 @@ test -x /usr/local/bin/kitty ; and kitty + complete setup fish | source
 # See: https://github.com/aws/aws-elastic-beanstalk-cli-setup
 # test -x $HOME/.ebcli-virtual-env/executables ; and set PATH $HOME/.ebcli-virtual-env/executables $PATH
 
-# Themes
-set SPACEFISH_PROMPT_ORDER time user dir host git exec_time line_sep battery jobs exit_code char
-
-
 # Coreutils bin and man folders
 set -x -g PATH (brew --prefix coreutils)/libexec/gnubin $PATH
 # set -x -g MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
@@ -96,7 +95,7 @@ set -x -g PATH (brew --prefix findutils)/libexec/gnubin $PATH
 # set -x -g MANPATH (brew --prefix findutils)/libexec/gnuman $MANPATH
 
 # go bin folder
-set -x -g PATH ~/go/bin $PATH
+# set -x -g PATH ~/go/bin $PATH
 
 # User bin folder
 set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
@@ -111,9 +110,4 @@ set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 # iTerm Shell Integration
 source ~/.iterm2_shell_integration.(basename $SHELL)
 
-# Change the default location of starship config
-set -x -g STARSHIP_CONFIG ~/.config/starship/config.toml
 
-# ______
-# Prompt
-starship init fish | source

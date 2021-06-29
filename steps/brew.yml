@@ -2,5 +2,11 @@
 
 # Installing dependencies:
 - brewfile:
-    file: brew/Brewfile
+    - brew/Brewfile
+
+- shell:
+  - command: bash -l './scripts/omf-install.sh'
+    description: Installing vscode extensions
+    stdout: true
+    stderr: true
 

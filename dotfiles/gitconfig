@@ -241,5 +241,7 @@
 
     insteadOf = https://github.com/
 
-[include]
-    path = ".gitconfig_local"
+# This is set in ~/.gitconfig_local but duplicated here as gets added automatically
+[user]
+	name = Enes Esen
+	email = enesen@gmx.com

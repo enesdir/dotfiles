@@ -28,9 +28,6 @@ brew "diff-so-fancy"
 # fish shell
 brew "fish"
 
-## Shell Utils
-brew "starship"
-
 # Node Version Manager
 brew "fnm"
 
@@ -71,7 +68,6 @@ brew "thefuck"
 # "brew install --cask"
 # Browser
 cask "firefox"
-cask "firefox-developer-edition"
 cask "google-chrome"
 
 # Terminals

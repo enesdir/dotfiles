@@ -1,23 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Title        oh-my-fish-install.sh
 # Description  Install/upgrade Homebrew packages and casks
 #==============================================================================
-readonly DOTFILES_DIRECTORY="${HOME}/dotfiles"
-
-# shellcheck disable=SC1091
-source "${DOTFILES_DIRECTORY}"/scripts/utils
-
-print_banner() {
-  echo -e "
-███████╗██╗███████╗██╗  ██╗    ███████╗██╗  ██╗███████╗██╗     ██╗
-██╔════╝██║██╔════╝██║  ██║    ██╔════╝██║  ██║██╔════╝██║     ██║
-█████╗  ██║███████╗███████║    ███████╗███████║█████╗  ██║     ██║
-██╔══╝  ██║╚════██║██╔══██║    ╚════██║██╔══██║██╔══╝  ██║     ██║
-██║     ██║███████║██║  ██║    ███████║██║  ██║███████╗███████╗███████╗
-╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
-"
-}
 
 _oh_my_fish_command_exists() {
   command -v "$@" >/dev/null 2>&1
@@ -28,11 +13,7 @@ _oh_my_fish_error() {
 }
 
 change_shell() {
-  echo -e "
-=======================================================================
-                         Changing Shell to fish
-=======================================================================
-"
+  echo -e "Changing shell to fish"
  # If this user's login shell is already "fish", do not attempt to switch.
   if [[ "$(basename "$SHELL")" = "fish" ]]; then
     return
@@ -84,32 +65,25 @@ exec fish -l
 # Install oh-my-fish if needed
 # See: https://github.com/oh-my-fish/oh-my-fish#installation
 install_omf() {
-  echo -e "
-=======================================================================
-                      Installing Oh My Fish
-======================================================================="
+  echo "Install oh-my-fish "
   if ! type_exists "omf"; then
-    info "Installing oh-my-fish"
+    echo "Installing oh-my-fish"
     curl -L https://get.oh-my.fish | fish
   else
-    success "Done. oh-my-fish already installed"
+    echo "Done. oh-my-fish already installed"
   fi
 }
 
-# Install oh-my-fish if needed
-# See: https://github.com/oh-my-fish/oh-my-fish#installation
+# iTerm fish integration
+# See: https://iterm2.com/documentation-shell-integration.html
 configure_iterm() {
-  echo -e "
-=======================================================================
-                      Configure iTerm (macOS)
-======================================================================="
+  echo "iTerm fish integration"
   curl -L https://iterm2.com/shell_integration/fish -o "${HOME}/.iterm2_shell_integration.fish"
-  success "Done. oh-my-fish already installed"
+  echo "Done. oh-my-fish already installed"
 }
 
 main() {
-  print_banner
-  change_fish
+  change_shell
   install_omf
   configure_iterm
 }
