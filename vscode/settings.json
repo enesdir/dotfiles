@@ -20,8 +20,9 @@
   "editor.renderIndentGuides": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
+  // "editor.fontFamily": "Fira Code Retina",
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontSize": 16,
   "editor.dragAndDrop": false,
   "editor.folding": false,
@@ -131,12 +132,9 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showTabs": true,
 
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
 
   "window.titleBarStyle": "native",
   "window.zoomLevel": 0,
