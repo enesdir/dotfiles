@@ -1,12 +1,12 @@
----
-
 # Installing dependencies:
 - brewfile:
     - brew/Brewfile
 
 - shell:
-  - command: bash -l './scripts/omf-install.sh'
-    description: Installing vscode extensions
+  -
+    command: bash -l './scripts/configure_iterm.sh'
+    description: Installing fish iTerm integration
     stdout: true
     stderr: true
+
 

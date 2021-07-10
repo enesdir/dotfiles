@@ -74,18 +74,9 @@ install_omf() {
   fi
 }
 
-# iTerm fish integration
-# See: https://iterm2.com/documentation-shell-integration.html
-configure_iterm() {
-  echo "iTerm fish integration"
-  curl -L https://iterm2.com/shell_integration/fish -o "${HOME}/.iterm2_shell_integration.fish"
-  echo "Done. oh-my-fish already installed"
-}
-
 main() {
   change_shell
   install_omf
-  configure_iterm
 }
 
 main "$@"

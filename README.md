@@ -12,16 +12,44 @@ What's in there?
 - all my shell configuration including [my own `sobole`](https://github.com/codenuru/sobole-zsh-theme) theme. See [`shell/`](https://github.com/codenuru/dotfiles/tree/master/shell) and [`config/zshrc`](https://github.com/codenuru/dotfiles/blob/master/config/zshrc)
 - all my `vscode` configuration. See `vscode/`
 
-
 ## Installation
 
 We are using [`dotbot`](https://github.com/anishathalye/dotbot/)
 to set things up. Steps:
 
 1. Clone this repo
-2. `cd` into `dotfiles/` folder
-3. Run: `./install`
 
+  ```bash
+  git clone --recursive https://github.com/codenuru/dotfiles .dotfiles
+  ```
+
+2. `cd` into `dotfiles/` folder
+
+  ```bash
+  cd .dotfiles
+  ```
+
+### Option 1 - For installing a predefined profile
+
+```bash
+bash ./install-profile <profile> [<configs...>]
+# See meta/profiles/ for available profiles
+```
+
+### Option 2 - For installing single configurations
+
+```bash
+bash ./install-standalone <configs...>
+# See meta/configs/ for available configurations
+```
+
+3. oh-my-fish installation
+
+```bash
+bash -l './scripts/omf-install.sh'
+```
+
+The installation scripts are idempotent and can therefore be executed safely multiple times.
 
 ## CLI
 
@@ -45,13 +73,11 @@ And some productivity hacks!
 I also have several other languages installed.
 But I don't use them on a daily basis.
 
-
 ## Apps
 
 I am using `brew` to install all free apps for my mac.
 I also sync apps from AppStore with `brew`,
 so the resulting [`Brewfile`](https://github.com/codenuru/dotfiles/blob/master/Brewfile) contains everything.
-
 
 ## Infrastructure
 
@@ -69,7 +95,6 @@ However, I also use several databases and other services locally:
 
 I use this setup for small and simple projects.
 Other stuff is always dockerized.
-
 
 ## VS Code
 
@@ -103,7 +128,6 @@ Here's the full list:
 
 1. `~/.gitconfig_local` to store any user-specific data
 2. `~/.shell_env_local` to store local shell config, like: usernames, passwords, tokens, `gpg` keys and so on
-
 
 ## License
 

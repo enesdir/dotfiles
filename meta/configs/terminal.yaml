@@ -1,17 +1,3 @@
----
-
-- create:
-  #  - ~/Desktop
-  #  - ~/Downloads
-  #  - ~/Templates
-  #  - ~/Public
-  #  - ~/Documents
-  #  - ~/Music
-  #  - ~/Library
-  #  - ~/Pictures
-  #  - ~/Movies
-    - '~/.config'
-
 - link:
     # Terminal:
     ~/.bash_profile: dotfiles/bash_profile
@@ -23,8 +9,6 @@
     ~/.config/omf: config/omf/
     # wtf
     ~/.config/wtf: config/wtf/
-    # starship
-    ~/.config/starship/config.toml: config/starship/config.toml
     # fish shell
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/conf.d:

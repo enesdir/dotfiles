@@ -1,10 +1,6 @@
----
-
-# Installing dependencies:
 - shell:
   - brew cleanup
-  - fnm install 14
-  - [install node v14]
+  - [fnm install 14, install node v14]
   - fnm use 14
   - [$(which node), switch node v14]
   -
