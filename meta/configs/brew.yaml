@@ -4,7 +4,7 @@
 
 - shell:
   -
-    command: bash -l './scripts/configure_iterm.sh'
+    command: bash -l './scripts/configure-iterm.sh'
     description: Installing fish iTerm integration
     stdout: true
     stderr: true

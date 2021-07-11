@@ -11,9 +11,10 @@ set -g theme_color_scheme nord
 
 # Paths
 # test -d $HOME/dotfiles/bin                              ; and set PATH $HOME/dotfiles/bin $PATH
-test -d $HOME/.local/bin                                 ; and set PATH $HOME/.local/bin/ $PATH
-test -d /usr/local/sbin                                  ; and set PATH /usr/local/sbin $PATH
-test -x /usr/local/share/git-core/contrib/diff-highlight ; and set PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
+test -d $HOME/.local/bin                                  ; and set PATH $HOME/.local/bin/ $PATH
+test -d /opt/homebrew/bin                                 ; and set PATH /opt/homebrew/bin $PATH
+test -d /usr/local/sbin                                   ; and set PATH /usr/local/sbin $PATH
+test -x /usr/local/share/git-core/contrib/diff-highlight  ; and set PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
 
 # Navigation
 function ..    ; cd .. ; end
@@ -47,10 +48,10 @@ test -e $HOME/.gitconfig_local ; and source $HOME/.gitconfig_local
 
 # Need to install gh via Homebrew
 # See: https://github.com/cli/cli
-test -x /usr/local/bin/gh   ; and function g  ; git $argv ; end
+test -x (brew --prefix)/bin/gh   ; and function g  ; git $argv ; end
 # Need to install tree via Homebrew
-test -x /usr/local/bin/tree ; and function l  ; tree --dirsfirst -aFCNL 1 $argv ; end
-test -x /usr/local/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg 1 $argv ; end
+test -x (brew --prefix)/bin/tree ; and function l  ; tree --dirsfirst -aFCNL 1 $argv ; end
+test -x (brew --prefix)/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg 1 $argv ; end
 
 # Golang
 # test -d $HOME/go ; and set -x GOPATH (go env GOPATH)
@@ -80,7 +81,7 @@ test -x /usr/local/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg 1 $a
 
 # Kitty
 # See: https://sw.kovidgoyal.net/kitty/#fish
-test -x /usr/local/bin/kitty ; and kitty + complete setup fish | source
+test -x (brew --prefix)/bin/kitty ; and kitty + complete setup fish | source
 
 # Elastic Beanstalk
 # See: https://github.com/aws/aws-elastic-beanstalk-cli-setup
@@ -106,6 +107,7 @@ set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 # fnm
 # set -x -g PATH ~/.fnm $PATH
 # fnm env --multi | source
+fnm env | source
 
 # iTerm Shell Integration
 source ~/.iterm2_shell_integration.(basename $SHELL)

@@ -1,0 +1,10 @@
+- create:
+    ~/.ssh:
+      mode: 0700
+
+- link:
+    # SSH:
+    ~/.ssh/config:
+      path: ssh/config
+      force: true
+      create: true

@@ -1,16 +1,11 @@
 - link:
-    # Terminal:
-    ~/.bash_profile: dotfiles/bash_profile
-    ~/.bashrc: dotfiles/bashrc
-    ~/.zshrc:
-      path: dotfiles/zshrc
-      force: true
     # omf
     ~/.config/omf: config/omf/
     # wtf
     ~/.config/wtf: config/wtf/
     # fish shell
-    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/config.fish:
+      path: config/fish/config.fish
     ~/.config/fish/conf.d:
       path: config/fish/conf.d/*.fish
       glob: true
@@ -18,22 +13,5 @@
       path: config/fish/functions/*.fish
       glob: true
 
-    # Git:
-    ~/.gitconfig: dotfiles/gitconfig
-    ~/.gitconfig_local: dotfiles/gitconfig_local
-    ~/.gitignore_global: dotfiles/gitignore
-    ~/.gitattributes_global: dotfiles/gitattributes
-    ~/.gitmessage_global: dotfiles/gitmessage
 
-    # Tools:
-    ~/.sqliterc: dotfiles/sqliterc
-
-    # Editors:
-    ~/.editorconfig: dotfiles/editorconfig
-
-    # SSH:
-    ~/.ssh/config:
-      path: ssh/config
-      force: true
-      create: true
 

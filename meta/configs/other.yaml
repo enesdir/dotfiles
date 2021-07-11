@@ -1,0 +1,32 @@
+- link:
+    # Terminal:
+    ~/.bash_profile:
+      if: '[ `uname -m` = arm64 ]'
+      path: dotfiles/bash_profile
+    ~/.bash_profile:
+      if: '[ `uname -m` = x84_86 ]'
+      path: dotfiles/bash_profile-intel
+    ~/.bashrc: dotfiles/bashrc
+    ~/.zshrc:
+      if: '[ `uname -m` = arm64 ]'
+      path: dotfiles/zshrc
+      force: true
+    ~/.zshrc:
+      if: '[ `uname -m` = x84_86 ]'
+      path: dotfiles/zshrc-intel
+      force: true
+    ~/.zprofile:
+      if: '[ `uname -m` = arm64 ]'
+      path: dotfiles/zprofile
+      force: true
+    ~/.zprofile:
+      if: '[ `uname -m` = x84_86 ]'
+      path: dotfiles/zprofile-intel
+      force: true
+
+    # Tools:
+    ~/.sqliterc: dotfiles/sqliterc
+
+    # Editors:
+    ~/.editorconfig: dotfiles/editorconfig
+

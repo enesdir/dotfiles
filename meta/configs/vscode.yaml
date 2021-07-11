@@ -28,9 +28,3 @@
       if: '[ "$CODESPACES" = true ]'
       path: vscode/snippets
       create: true
-
-- shell:
-  - command: bash -l './vscode/install.sh'
-    description: Installing vscode extensions
-    stdout: true
-    stderr: true

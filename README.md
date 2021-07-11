@@ -7,9 +7,8 @@
 
 What's in there?
 
-- all my `brew` dependencies including: applications, fonts, etc. See [`Brewfile`](https://github.com/codenuru/dotfiles/blob/master/Brewfile)
-- all my `macOS` configuration. See [`macos`](https://github.com/codenuru/dotfiles/blob/master/macos/)
-- all my shell configuration including [my own `sobole`](https://github.com/codenuru/sobole-zsh-theme) theme. See [`shell/`](https://github.com/codenuru/dotfiles/tree/master/shell) and [`config/zshrc`](https://github.com/codenuru/dotfiles/blob/master/config/zshrc)
+- all my `brew` dependencies including: applications, fonts, etc. See [`Brewfile`](https://github.com/codenuru/dotfiles/blob/main/brew/Brewfile)
+- all my `macOS` configuration. See [`macos`](https://github.com/codenuru/dotfiles/tree/main/macos/)
 - all my `vscode` configuration. See `vscode/`
 
 ## Installation
@@ -43,10 +42,19 @@ bash ./install-standalone <configs...>
 # See meta/configs/ for available configurations
 ```
 
-3. oh-my-fish installation
+3. Manual - Copy your private ssh key into the .ssh folder
+
+
+4. Secure your ssh folder
 
 ```bash
-bash -l './scripts/omf-install.sh'
+bash -l './scripts/configure-ssh.sh'
+```
+
+5. oh-my-fish installation
+
+```bash
+bash -l './scripts/install-omf.sh'
 ```
 
 The installation scripts are idempotent and can therefore be executed safely multiple times.
@@ -54,17 +62,15 @@ The installation scripts are idempotent and can therefore be executed safely mul
 ## CLI
 
 I am using both [`hyper`](https://hyper.is/)
-and default `Terminal App` as terminal emulators.
-I am using `zsh` with [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)
+and default `iTerm` as terminal emulators.
+I am using `fish` with [`oh-my-fish`](https://github.com/oh-my-fish/oh-my-fish)
 as a main shell.
-And [`zplug`](https://github.com/zplug/zplug) to manage shell plugins.
 I also have a lot of tools to make my working experience better.
 
 I mainly work with three stacks:
 
 - `python`
-- `node` + `vue` + `typescript`
-- `elixir`
+- `node` + `react` + `typescript`
 
 So, they are configured nice and smoothly.
 You will have configured version managers, best practices, and useful tools.
@@ -111,7 +117,7 @@ Here's how my new `vscode` setup looks like:
 
 It is also fully [configured](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/personalizing-codespaces-for-your-account) to be used with [Codespaces](https://github.com/features/codespaces).
 
-Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/master/vscode/install.sh) I use:
+Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packages/vscode-extensions.sh) I use:
 
 - [`ayu`](https://github.com/ayu-theme/vscode-ayu) theme with modifications and `A File Icon` icons
 - `Elixir` syntax highlighting

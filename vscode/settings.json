@@ -164,5 +164,15 @@
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
 
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "json.schemas": [
+    {
+      "name": "vscode-expo-manifest",
+      "url": "file:///Users/enes/Library/Application%20Support/Code/User/globalStorage/bycedric.vscode-expo/manifest-42.0.0.json",
+      "fileMatch": [
+        "app.json",
+        "app.config.json"
+      ]
+    }
+  ]
 }
