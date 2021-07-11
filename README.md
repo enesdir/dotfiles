@@ -1,6 +1,6 @@
 # codenuru's dotfiles
 
-![codenuru's dotfiles](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/hyper.png)
+![codenuru's dotfiles](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/iterm.png)
 
 
 ## Contents
@@ -61,8 +61,7 @@ The installation scripts are idempotent and can therefore be executed safely mul
 
 ## CLI
 
-I am using both [`hyper`](https://hyper.is/)
-and default `iTerm` as terminal emulators.
+I am using default `iTerm` as terminal emulators.
 I am using `fish` with [`oh-my-fish`](https://github.com/oh-my-fish/oh-my-fish)
 as a main shell.
 I also have a lot of tools to make my working experience better.
@@ -113,7 +112,7 @@ So, I have switched to `vscode`.
 It solved almost all issues I had with `Sublime`.
 Here's how my new `vscode` setup looks like:
 
-![codenuru's vscode for Python](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/vscode-python.png)
+![codenuru's vscode for Python](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/vscode.png)
 
 It is also fully [configured](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/personalizing-codespaces-for-your-account) to be used with [Codespaces](https://github.com/features/codespaces).
 
