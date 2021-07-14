@@ -14,13 +14,15 @@ brew "coreutils"
 brew "moreutils"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew "findutils"
+# Install File comparison utilities
+brew "diffutils"
 
 ## Version Control
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# Add GitHub support to git on the command-line
-brew "hub"
+#  GitHub’s official command line tool
+brew "gh"
 # Good-lookin" diffs with diff-highlight and more
 brew "diff-so-fancy"
 
@@ -31,7 +33,7 @@ brew "fish"
 # Node Version Manager
 brew "fnm"
 
-brew "pipenv"
+brew "pyenv"
 brew "python"
 brew "sqlite"
 
@@ -57,6 +59,8 @@ brew "fd"
 brew "fzf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# A file watching service
+brew "watchman"
 
 # Misc
 brew "brew-cask-completion"
@@ -85,9 +89,14 @@ cask "spotify"
 cask "the-unarchiver"
 cask "font-hack-nerd-font"
 
+# Java Development Kit
+cask "adoptopenjdk/openjdk/adoptopenjdk13"
+
 # Editors
 cask "visual-studio-code"
 cask "atom"
+# Android Studio provides the fastest tools for building apps on every type of Android device.
+cask "android-studio"
 
 # Fonts
 cask "font-anonymous-pro"

@@ -24,8 +24,10 @@ function ..... ; cd ../../../../ ; end
 function ......; cd ../../../../../ ; end
 
 # Navigation for me
-function dt    ; cd $HOME/Desktop ; end
-function work  ; cd $HOME/Documents/workspace ; end
+function dt       ; cd $HOME/Desktop ; end
+function rnwork   ; cd $HOME/dev/rnwork ; end
+function other    ; cd $HOME/dev/other ; end
+function mywork   ; cd $HOME/dev/mywork ; end
 
 # Utilities
 function mv        ; gmv --interactive --verbose $argv ; end
@@ -66,18 +68,22 @@ test -x (brew --prefix)/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg
 
 # Python
 # See: https://github.com/pyenv/pyenv#homebrew-on-mac-os-x
-# test -x /usr/local/bin/pyenv ; and pyenv init - | source
+test -x (brew --prefix)/bin/pyenv ; and pyenv init - | source
 
 # Java
 # See: http://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
-# test -x /usr/libexec/java_home ; and set -x JAVA_HOME (/usr/libexec/java_home)
-# test -d $JAVA_HOME/bin         ; and set -x PATH $JAVA_HOME/bin $PATH
+# See: https://reactnative.dev/docs/environment-setup
+test -x /usr/libexec/java_home ; and set -x JAVA_HOME (/usr/libexec/java_home)
+test -d $JAVA_HOME/bin         ; and set -x PATH $JAVA_HOME/bin $PATH
 
 # Android
 # See: https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x
-# test -d $HOME/Library/Android/sdk    ; and set -x ANDROID_HOME $HOME/Library/Android/sdk
-# test -d $ANDROID_HOME/tools          ; and set -x PATH $ANDROID_HOME/tools $PATH
-# test -d $ANDROID_HOME/platform-tools ; and set -x PATH $ANDROID_HOME/platform-tools $PATH
+# See: https://reactnative.dev/docs/environment-setup
+test -d $HOME/Library/Android/sdk    ; and set -x ANDROID_HOME $HOME/Library/Android/sdk
+test -d $ANDROID_HOME/emulator       ; and set -x PATH $ANDROID_HOME/emulator $PATH
+test -d $ANDROID_HOME/tools          ; and set -x PATH $ANDROID_HOME/tools $PATH
+test -d $ANDROID_HOME/tools/bin      ; and set -x PATH $ANDROID_HOME/tools/bin $PATH
+test -d $ANDROID_HOME/platform-tools ; and set -x PATH $ANDROID_HOME/platform-tools $PATH
 
 # Elastic Beanstalk
 # See: https://github.com/aws/aws-elastic-beanstalk-cli-setup
@@ -99,6 +105,12 @@ set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 
 # Composer
 # set -x -g PATH ~/.composer/vendor/bin $PATH
+
+if type -q fd
+  set -gx FZF_DEFAULT_COMMAND "fish -c 'begin; git ls-tree -r --name-only HEAD; git ls-files --others --exclude-standard; git diff --name-only --staged; end | sort -u || fd --type f --type l --hidden --follow --exclude .git' 2> /dev/null"
+  set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+  set -gx FZF_DEFAULT_OPTS "--no-mouse -1 --multi --info=inline"
+end
 
 # fnm
 # set -x -g PATH ~/.fnm $PATH

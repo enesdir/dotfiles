@@ -9,6 +9,7 @@
 
 - create:
     - $HOME/.config
+    - $HOME/dev
 
 - clean:
     $HOME:
