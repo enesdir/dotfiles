@@ -79,10 +79,6 @@ test -x (brew --prefix)/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg
 # test -d $ANDROID_HOME/tools          ; and set -x PATH $ANDROID_HOME/tools $PATH
 # test -d $ANDROID_HOME/platform-tools ; and set -x PATH $ANDROID_HOME/platform-tools $PATH
 
-# Kitty
-# See: https://sw.kovidgoyal.net/kitty/#fish
-test -x (brew --prefix)/bin/kitty ; and kitty + complete setup fish | source
-
 # Elastic Beanstalk
 # See: https://github.com/aws/aws-elastic-beanstalk-cli-setup
 # test -x $HOME/.ebcli-virtual-env/executables ; and set PATH $HOME/.ebcli-virtual-env/executables $PATH

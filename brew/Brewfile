@@ -83,7 +83,6 @@ cask "slack"
 cask "postman"
 cask "spotify"
 cask "the-unarchiver"
-cask "kitty"
 cask "font-hack-nerd-font"
 
 # Editors
