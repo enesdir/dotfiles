@@ -8,6 +8,7 @@
       path: config/fish/config.fish
     ~/.config/fish/conf.d: config/fish/conf.d/
     ~/.config/fish/functions: config/fish/functions/
+    ~/.config/fish/completions: config/fish/completions/
 
 
 

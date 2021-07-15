@@ -16,3 +16,4 @@
         force: true
     $HOME/.config:
         recursive: true
+        exclude: $HOME/.config/fish/.iterm2_shell_integration.fish

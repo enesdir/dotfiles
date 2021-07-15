@@ -16,6 +16,17 @@ test -d /opt/homebrew/bin                                 ; and set PATH /opt/ho
 test -d /usr/local/sbin                                   ; and set PATH /usr/local/sbin $PATH
 test -x /usr/local/share/git-core/contrib/diff-highlight  ; and set PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
 
+# typos
+abbr bwre brew
+abbr gti git
+abbr yearn yarn
+
+# Recursively delete `.DS_Store` files
+alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
 # Navigation
 function ..    ; cd .. ; end
 function ...   ; cd ../../ ; end
@@ -27,7 +38,8 @@ function ......; cd ../../../../../ ; end
 function dt       ; cd $HOME/Desktop ; end
 function rnwork   ; cd $HOME/dev/rnwork ; end
 function other    ; cd $HOME/dev/other ; end
-function mywork   ; cd $HOME/dev/mywork ; end
+function mypj     ; cd $HOME/dev/mypj ; end
+function pj       ; cd $HOME/dev/pj ; end
 
 # Utilities
 function mv        ; gmv --interactive --verbose $argv ; end
@@ -118,6 +130,6 @@ end
 fnm env | source
 
 # iTerm Shell Integration
-source ~/.iterm2_shell_integration.(basename $SHELL)
+source ~/.config/fish/.iterm2_shell_integration.fish
 
 
