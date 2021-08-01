@@ -2,7 +2,7 @@
 function update
 
   if type -q omf
-    echo \nomf plugins with fisher\n
+    echo \nUpdating omf and plugins\n
     omf update
   end
 

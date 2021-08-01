@@ -69,47 +69,26 @@ I also have a lot of tools to make my working experience better.
 I mainly work with three stacks:
 
 - `python`
-- `node` + `react` + `typescript`
+- `node` + `yarn` + `react` + `typescript`
 
 So, they are configured nice and smoothly.
 You will have configured version managers, best practices, and useful tools.
 And some productivity hacks!
 
-I also have several other languages installed.
-But I don't use them on a daily basis.
-
 ## Apps
 
 I am using `brew` to install all free apps for my mac.
 I also sync apps from AppStore with `brew`,
-so the resulting [`Brewfile`](https://github.com/codenuru/dotfiles/blob/master/Brewfile) contains everything.
+so the resulting [`Brewfile`](https://github.com/codenuru/dotfiles/blob/master/brew/Brewfile) contains everything.
 
 ## Infrastructure
 
-I try to containerize everything.
-So `docker` is my main development and deployment tool.
-You can install it from its [official site](https://docs.docker.com/docker-for-mac/) (`brew` [version](https://github.com/Homebrew/homebrew-core/blob/master/Formula/docker.rb) is also an option).
-
-I prefer to use `edge` version of `docker`.
-So, you will have to download it manually.
-
-However, I also use several databases and other services locally:
-
-- `postgresql` (with `postgis`)
-- `redis`
-
-I use this setup for small and simple projects.
-Other stuff is always dockerized.
+I try to cloud service everything.
 
 ## VS Code
 
-I loved my `Sublime`. It was fast and beautiful.
-But I have switched to `vscode`.
-The main reason is that `Sublime` is almost unmaintained.
-Packages are also abandoned.
+I loved my `Visual Studio Code`. It is fast and beautiful.
 
-So, I have switched to `vscode`.
-It solved almost all issues I had with `Sublime`.
 Here's how my new `vscode` setup looks like:
 
 ![codenuru's vscode for Python](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/vscode.png)
@@ -118,11 +97,10 @@ It is also fully [configured](https://docs.github.com/en/free-pro-team@latest/gi
 
 Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packages/vscode-extensions.sh) I use:
 
-- [`ayu`](https://github.com/ayu-theme/vscode-ayu) theme with modifications and `A File Icon` icons
+- [`OneDark Pro`](https://github.com/Binaryify/OneDark-Pro) theme with modifications and `vscode-icons` icons
 - `Elixir` syntax highlighting
-- [`Vetur`](https://github.com/vuejs/vetur) for `Vue` features
+- [`GitLens`](https://github.com/eamodio/vscode-gitlens) supercharge the `git` capabilities
 - [`Python`](https://github.com/Microsoft/vscode-python) plugin
-- [`Rust`](https://github.com/rust-lang/rls-vscode) plugin
 - `editorconfig` integration
 
 ## Local configuration
