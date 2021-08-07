@@ -65,6 +65,8 @@ brew "watchman"
 # Misc
 brew "brew-cask-completion"
 brew "thefuck"
+# Sentry command line tool
+brew "install getsentry/tools/sentry-cli"
 
 ####################
 # Cask
