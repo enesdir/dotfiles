@@ -129,7 +129,9 @@ end
 # fnm env --multi | source
 fnm env | source
 
+# yarn global
+# https://github.com/yarnpkg/yarn/issues/5353#issuecomment-877905774
+set -U fish_user_paths (yarn global bin) $fish_user_paths
+
 # iTerm Shell Integration
 source ~/.config/fish/.iterm2_shell_integration.fish
-
-

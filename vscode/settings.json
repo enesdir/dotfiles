@@ -8,6 +8,7 @@
   // Editor:
   "editor.cursorSurroundingLines": 3,
   "editor.useTabStops": true,
+  "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.tabCompletion": "on",
   "editor.wordWrap": "on",
@@ -28,7 +29,7 @@
   "editor.folding": false,
   "editor.glyphMargin": true,
   "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll": true
     },
   "explorer.confirmDelete": false,
 
@@ -78,45 +79,6 @@
     "yarn.lock": true
   },
 
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue"
-  ],
-
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[tsx]": {
-      "editor.tabSize": 2
-  },
-
-  "[jsx]": {
-      "editor.tabSize": 2
-  },
-
-  "[html]": {
-      "editor.tabSize": 2
-  },
-
-  "[css]": {
-      "editor.tabSize": 2
-  },
-
-
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
@@ -161,18 +123,12 @@
   "gitlens.keymap": "alternate",
 
   "prettier.semi": false,
+  // eslint
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
 
   "diffEditor.ignoreTrimWhitespace": false,
-  "json.schemas": [
-    {
-      "name": "vscode-expo-manifest",
-      "url": "file:///Users/enes/Library/Application%20Support/Code/User/globalStorage/bycedric.vscode-expo/manifest-42.0.0.json",
-      "fileMatch": [
-        "app.json",
-        "app.config.json"
-      ]
-    }
-  ]
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
