@@ -1,157 +1,138 @@
 #!/usr/bin/env bash
 
-set -e
-
-# This file contains settings for mac which makes me happy.
-# It is not a full list.
-#
-# The best resource of finding new settings for other users is:
-# https://www.defaults-write.com
-#
-# Some parts are taken from:
-# - https://github.com/rootbeersoup/dotfiles
-# - https://github.com/skwp/dotfiles
-#
-# All values are sorted inside their blocks: newest are on the top.
-#
-
-echo 'Configuring your mac. Hang tight.'
+# Close "System Preferences" to keep it from overriding settings we're about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-# === General ===
+# Ask for the administrator password upfront
+sudo -v
 
-# Hide remaining battery time; show percentage
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-defaults write com.apple.menuextra.battery ShowTime -string "NO"
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
 
-# Disable dashboard:
-defaults write com.apple.dashboard mcx-disabled -bool true
+# Install fonts
+cp fonts/* ~/Library/Fonts/
 
-# Disable startup noise:
-sudo nvram SystemAudioVolume=%01
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
 
-# Mojave renders fonts that are too thin for me, use regular pre-mojave style:
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-
-# Scrollbars visible when scrolling:
-defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
-
-# Always use expanded save dialog:
+# Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
-# This line deactivates rubber scrolling:
-# http://osxdaily.com/2012/05/10/disable-elastic-rubber-band-scrolling-in-mac-os-x/
-defaults write -g NSScrollViewRubberbanding -int 0
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
-# Maximize windows on double clicking them:
-defaults write -g AppleActionOnDoubleClick 'Maximize'
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Disable multitouch swipes:
-defaults write -g AppleEnableSwipeNavigateWithScrolls -int 0
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# Map bottom right corner to right-click on Trackpad
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
+# Set fast keyboard repeat rate
+defaults write -g KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 15
 
-# === Dock ===
+# Set function keys as default on Touch Bar
+defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
 
-# Show indicator lights for open apps in Dock:
-defaults write com.apple.dock show-process-indicators -bool true
+# Set language and text formats
+defaults write NSGlobalDomain AppleLanguages -array "en-US" "tr-TR"
+defaults write NSGlobalDomain AppleLocale -string "tr_TR"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# Dock size and location:
-defaults write com.apple.Dock size-immutable -bool yes
+###############################################################################
+# Screen                                                                      #
+###############################################################################
 
-# Show Dock instantly:
-defaults write com.apple.dock autohide-delay -float 0
+# Change default folder for screenshots
+mkdir -p ${HOME}/Pictures/Screenshots
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
 
+###############################################################################
+# Finder                                                                      #
+###############################################################################
 
-# === Finder ===
-
-# Keep folders on top when sorting by name:
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
-
-# Show Finder path bar:
-defaults write com.apple.finder ShowPathbar -bool true
-
-# Do not show status bar in Finder:
-defaults write com.apple.finder ShowStatusBar -bool false
-
-# Show hidden files in Finder:
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
-# Show file extensions in Finder:
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+# Allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
+# Show all file extensions
+defaults write -g AppleShowAllExtensions -bool true
 
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
 
-# Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Show Library folder
-chflags nohidden ~/Library
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Automatically open a new Finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-# === Safari ===
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-# Privacy: don’t send search queries to Apple
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Improve Safari security
-defaults write com.apple.Safari \
-  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled \
-  -bool false
-defaults write com.apple.Safari \
-  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles \
-  -bool false
+# Show the ~/Library folder
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library 2&>/dev/null
 
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
 
-# === Text editing ===
+###############################################################################
+# Dock                                                                        #
+###############################################################################
 
-# Disable smart quotes:
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
 
-# Disable autocorrect:
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Hide recent apps in the Dock
+defaults write com.apple.dock show-recents -bool false
 
-# Disable auto-capitalization:
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+###############################################################################
+# Photos                                                                      #
+###############################################################################
 
-# Disable smart dashes:
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-# Diable automatic period substitution:
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
 
+for app in "cfprefsd" \
+  "Dock" \
+  "Finder" \
+  "Photos" \
+  "SystemUIServer"; do
+  killall "${app}" &> /dev/null
+done
 
-# === Maccy ===
-
-# https://github.com/p0deje/Maccy
-defaults write org.p0deje.Maccy pasteByDefault true
-defaults write org.p0deje.Maccy historySize 20
-
-
-# Restarting apps:
-echo 'Restarting apps...'
-killall Finder
-killall Dock
-
-echo 'Done!'
+echo "Done. Please restart the computer for all changes to take effect."
