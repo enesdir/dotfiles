@@ -100,11 +100,11 @@ And some productivity hacks!
   - abbrex.fish - Utility for expanding abbreviations in fish-scripts
   - emptytrash.fish - Empties trash and clears system logs
   - fuck.fish - thefuck helper
-  - forrepos.fish - Executes a passed command for all repos in `$DEVELOPER_DIR`
-  - gtc.fish - git clone into `$DEVELOPER_DIR` with dir structure like `githosting/org/repo`
+  - forrepos.fish - Executes a passed command for all repos in `~/dev`
+  - gtc.fish - git clone into `~/dev` with dir structure like `githosting/org/repo`
   - ls.fish - Calling ls with parameter --color=auto
-  - repo.fish - Finds a repository in `$DEVELOPER_DIR` and jumps to it
-  - repodir.fish - Finds a repository in `$DEVELOPER_DIR` and prints its path
+  - repo.fish - Finds a repository in `~/dev` and jumps to it
+  - repodir.fish - Finds a repository in `~/dev` and prints its path
   - update.fish - Installs OS X Software Updates, Homebrew, npm, and their installed packages
   - week.fish - Returns the current week number
 
@@ -138,19 +138,13 @@ Here's how my new `vscode` setup looks like:
 
 ![codenuru's vscode for Python](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/vscode.png)
 
-Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packages/vscode-extensions.sh) I use:
-
-- [`OneDark Pro`](https://github.com/Binaryify/OneDark-Pro) theme with modifications and `vscode-icons` icons
-- `Elixir` syntax highlighting
-- [`GitLens`](https://github.com/eamodio/vscode-gitlens) supercharge the `git` capabilities
-- [`Python`](https://github.com/Microsoft/vscode-python) plugin
-- `editorconfig` integration
+Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packages/vscode-extensions.sh)
 
 ### Local configuration(dotfiles/)
 
-- .gitignore_global - Contains global gitignores, such as OS-specific files and
+- gitignore_global - Contains global gitignores, such as OS-specific files and
 several compiled files
-- .gitconfig - Sets several global Git variables
+- gitconfig - Sets several global Git variables
 
 Some of the used tools requires local configuration. Such as `git` with username and email.
 

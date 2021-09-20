@@ -15,8 +15,6 @@ test -d $HOME/.local/bin                                  ; and set PATH $HOME/.
 test -d /opt/homebrew/bin                                 ; and set PATH /opt/homebrew/bin $PATH
 test -d /usr/local/sbin                                   ; and set PATH /usr/local/sbin $PATH
 test -x /usr/local/share/git-core/contrib/diff-highlight  ; and set PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
-# Set the Code directory
-test -d $HOME/dev                                         ;set -x DEVELOPER_DIR $HOME/dev
 
 # typos
 abbr bwre brew
