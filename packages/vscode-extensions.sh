@@ -30,3 +30,5 @@ code --install-extension svelte.svelte-vscode
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension zhuangtongfa.material-theme
+code --install-extension gruntfuggly.todo-tree
+code --install-extension streetsidesoftware.code-spell-checker

@@ -1,6 +1,5 @@
 // Place your settings in this file to overwrite the default settings
 {
-
   "breadcrumbs.enabled": true,
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "on",
@@ -17,6 +16,7 @@
   "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.maxColumn": 100,
+  "editor.renderLineHighlight": "gutter",
   "editor.renderWhitespace": "boundary",
   "editor.renderIndentGuides": true,
   "editor.suggestSelection": "first",
@@ -25,13 +25,15 @@
   "editor.fontFamily": "FiraCode-Retina",
   "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontSize": 16,
+  "editor.lineHeight": 26,
   "editor.dragAndDrop": false,
   "editor.folding": false,
   "editor.glyphMargin": true,
   "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    },
+    "source.fixAll": true
+  },
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
 
   // Files:
   "files.autoSave": "onWindowChange",
@@ -39,8 +41,8 @@
   "files.insertFinalNewline": true,
   "files.exclude": {
     "**/.cache": true,
-      "**/.data": true,
-      "**/.DS_Store": true,
+    "**/.data": true,
+    "**/.DS_Store": true,
     "**/__pycache__": true,
     "**/.idea": true,
     "**/.pytest_cache": true,
@@ -63,13 +65,16 @@
   "files.associations": {
     ".babelrc": "jsonc",
     ".eslintrc": "jsonc",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    ".tslintrc": "json",
+    "*.geojson": "json",
+    ".sequelizerc": "javascript",
     "*.pyi": "python",
     "*.bats": "shellscript",
-    "*.env.*": "dotenv",
     "dockerfile.*": "dockerfile",
-    ".stylelintrc": "json",
-    ".tslintrc": "json",
-    "*.geojson": "json"
+    "*.tsx": "typescriptreact",
+    "*.env.*": "dotenv"
   },
 
   "search.exclude": {
@@ -93,6 +98,7 @@
   "workbench.settings.useSplitJSON": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showTabs": true,
+  "workbench.editor.labelFormat": "short",
 
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
@@ -107,6 +113,7 @@
 
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.defaultProfile.osx": "/usr/local/bin/fish",
+  "terminal.integrated.showExitAlert": false,
 
   // Tools, extensions, and languages:
   "python.linting.pylintEnabled": true,
@@ -114,10 +121,15 @@
   // "python.pythonPath": "${workspaceFolder}/.venv/bin/python3",
   "python.pythonPath": "/usr/local/bin/python3",
 
+  //JavaScript
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.preferences.quoteStyle": "single",
+  "javascript.suggest.autoImports": true,
+  //TypeScript
+  "typescript.tsserver.log": "off",
   "typescript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
 
   "gitlens.codeLens.enabled": true,
   "gitlens.keymap": "alternate",
@@ -128,7 +140,59 @@
   "eslint.format.enable": true,
 
   "diffEditor.ignoreTrimWhitespace": false,
+  // Todo tree
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
+  //Code Spell
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!csharp",
+    "!go",
+    "!handlebars",
+    "!haskell",
+    "!jade",
+    "!java",
+    "!latex",
+    "!php",
+    "!pug",
+    "!python",
+    "!restructuredtext",
+    "!rust",
+    "!scala",
+    "!scss"
+  ],
+  "cSpell.language": "en,tr",
+  "cSpell.userWords": [
+    "chakra",
+    "middlewares",
+    "prefetch",
+    "rocketseat",
+    "upsert"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
