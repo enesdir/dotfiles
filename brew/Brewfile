@@ -30,6 +30,9 @@ brew "diff-so-fancy"
 # fish shell
 brew "fish"
 
+# Node
+brew "node"
+
 # Node Version Manager
 brew "fnm"
 
@@ -76,7 +79,7 @@ brew "install getsentry/tools/sentry-cli"
 # "brew install --cask"
 # Browser
 cask "firefox"
-cask "google-chrome"
+cask "chromium"
 
 # Terminals
 cask "iterm2"
