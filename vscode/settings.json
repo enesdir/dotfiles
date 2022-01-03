@@ -32,6 +32,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs":"active",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
@@ -175,6 +177,7 @@
   "cSpell.language": "en,tr",
   "cSpell.userWords": [
     "chakra",
+    "firestore",
     "middlewares",
     "prefetch",
     "rocketseat",

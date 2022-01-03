@@ -33,6 +33,9 @@ brew "fish"
 # Node
 brew "node"
 
+# Java (OpenJDK) Java Development Kit
+brew "java"
+
 # Node Version Manager
 brew "fnm"
 
@@ -93,6 +96,7 @@ cask "postman"
 cask "spotify"
 cask "the-unarchiver"
 cask "font-hack-nerd-font"
+cask "netnewswire"
 
 # Java Development Kit
 cask "adoptopenjdk/openjdk/adoptopenjdk13"

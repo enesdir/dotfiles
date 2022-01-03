@@ -133,5 +133,9 @@ fnm env | source
 # https://github.com/yarnpkg/yarn/issues/5353#issuecomment-877905774
 set -U fish_user_paths (yarn global bin) $fish_user_paths
 
+# Global env
+set -x -g NODE_OPTIONS --max_old_space_size=8192
+
 # iTerm Shell Integration
 source ~/.config/fish/.iterm2_shell_integration.fish
+fish_add_path /opt/homebrew/opt/openjdk/bin

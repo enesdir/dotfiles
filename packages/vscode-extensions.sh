@@ -16,7 +16,6 @@ code --install-extension burkeholland.simple-react-snippets
 code --install-extension byCedric.vscode-expo
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension codezombiech.gitignore
-code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension eg2.vscode-npm-script
