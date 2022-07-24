@@ -18,7 +18,6 @@
   "editor.minimap.maxColumn": 100,
   "editor.renderLineHighlight": "gutter",
   "editor.renderWhitespace": "boundary",
-  "editor.renderIndentGuides": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   // "editor.fontFamily": "Fira Code Retina",
@@ -33,7 +32,7 @@
     "source.fixAll": true
   },
   "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs":"active",
+  "editor.guides.bracketPairs": "active",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
@@ -197,5 +196,10 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.accessibilitySupport": "off",
+  "editor.guides.indentation": true,
+  "editor.unicodeHighlight.allowedLocales": {
+    "tr": true
   }
 }
