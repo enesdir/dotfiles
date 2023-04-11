@@ -1,17 +1,12 @@
 - shell:
     - brew cleanup
+    - [fnm install --lts, install latest LTS node]
+    - [fnm alias default "$(node -v), Set this Node version as the default]
     - command: bash -l './packages/npm-global.sh'
       description: Installing npm global packages
-      stdout: true
-      stderr: true
-    - command: bash -l './packages/yarn-global.sh'
-      description: Installing yarn global packages
       stdout: true
       stderr: true
     - command: bash -l './packages/vscode-extensions.sh'
       description: Installing vscode extensions
       stdout: true
       stderr: true
-    - [fnm install 16, install node v16]
-    - fnm use 16
-    - [$(which node), switch node v16]

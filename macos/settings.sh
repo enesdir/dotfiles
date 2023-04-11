@@ -1,81 +1,98 @@
 #!/usr/bin/env bash
 
-# Close "System Preferences" to keep it from overriding settings we're about to change
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
 
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
-# Install fonts
-cp fonts/* ~/Library/Fonts/
-
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
-# Map bottom right corner to right-click on Trackpad
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
-# Set fast keyboard repeat rate
-defaults write -g KeyRepeat -int 2
-defaults write -g InitialKeyRepeat -int 15
-
-# Set function keys as default on Touch Bar
-defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
-
-# Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en-US" "tr-TR"
-defaults write NSGlobalDomain AppleLocale -string "tr_TR"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
+# Set a fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
 
-# Change default folder for screenshots
-mkdir -p ${HOME}/Pictures/Screenshots
-defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
-# Allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+# Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
-# Show all file extensions
-defaults write -g AppleShowAllExtensions -bool true
+# Show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Show path bar
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -87,34 +104,93 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Automatically open a new Finder window when a volume is mounted
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
-
-# Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-# Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library 2&>/dev/null
-
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
 
 ###############################################################################
-# Dock                                                                        #
+# Dock, Dashboard, and hot corners                                            #
 ###############################################################################
+
+# Wipe all (default) app icons from the Dock
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Hide recent apps in the Dock
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############################################################################
+# Terminal & iTerm 2                                                          #
+###############################################################################
+
+# Only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
+
+# Enable Secure Keyboard Entry in Terminal.app
+# See: https://security.stackexchange.com/a/47786/8918
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+# Disable the annoying line marks
+defaults write com.apple.Terminal ShowLineMarks -int 0
+
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+###############################################################################
+# Mac App Store                                                               #
+###############################################################################
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Download newly available updates in background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# Automatically download apps purchased on other Macs
+defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
 
 ###############################################################################
 # Photos                                                                      #

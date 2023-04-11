@@ -201,5 +201,10 @@
   "editor.guides.indentation": true,
   "editor.unicodeHighlight.allowedLocales": {
     "tr": true
-  }
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svg.preview.mode": "svg",
+  "genieai.enableConversationHistory": true
 }
