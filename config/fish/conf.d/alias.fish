@@ -13,10 +13,10 @@ function ......; cd ../../../../../ ; end
 
 # Navigation for me
 function dt       ; cd $HOME/Desktop ; end
-function rnwork   ; cd $HOME/dev/rnwork ; end
-function other    ; cd $HOME/dev/other ; end
-function mypj     ; cd $HOME/dev/mypj ; end
-function pj       ; cd $HOME/dev/pj ; end
+function rnwork   ; cd $DEVELOPMENT_DIR/rnwork ; end
+function other    ; cd $DEVELOPMENT_DIR/other ; end
+function mypj     ; cd $DEVELOPMENT_DIR/mypj ; end
+function pj       ; cd $DEVELOPMENT_DIR/pj ; end
 
 # Utilities
 function mv        ; gmv --interactive --verbose $argv ; end

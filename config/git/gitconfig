@@ -117,8 +117,8 @@
 [core]
 
     # Use custom `.gitignore`
-    excludesfile = ~/.gitignore_global
-    attributesFile = ~/.gitattributes_global
+    excludesfile = ~/.config/git/ignore
+    attributesFile = ~/.config/git/attributes
 	  autocrlf = input
 	  safecrlf = warn
 

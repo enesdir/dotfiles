@@ -1,17 +1,34 @@
 
-function update
+function update --description 'Keep everything up to date'
+
+  echo "Starting daily update routine"
 
   if type -q omf
     echo \nUpdating omf and plugins\n
     omf update
   end
 
-  if type -q brew
-    echo \nUpdating brew packages\n
-    brew update
-    brew upgrade --display-times
-    brew cleanup
-  end
+  # echo "Updating osx"
+  # softwareupdate --install --all
+
+  echo "Updating brew"
+  brew update
+  brew upgrade --display-times
+  brew upgrade --cask
+  brew cleanup
+  brew update-reset
+  brew doctor
+  echo "Making sure brewfile is up-to-date"
+  brew bundle check --verbose --file="$XDG_CONFIG_HOME/brew/Brewfile"
+
+  echo "Generating external fish completions"
+  fish_generate_completions
+
+  echo "Updating fish completions"
+  fish_update_completions
+
+  echo "Updating projects"
+  repos-update
 
   # for package in (npm -g outdated --parseable --depth=0 | cut -d: -f2)
   #   npm -g install "$package"
@@ -35,5 +52,5 @@ function update
   # if type -q cargo-install-update
   #   cargo install-update -a
   # end
-
+  echo "Finished daily update routine"
 end

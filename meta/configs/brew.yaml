@@ -2,11 +2,11 @@
 - brewfile:
     - brew/Brewfile
 
+- link:
+    ~/.config/brew/Brewfile: brew/Brewfile
+
 - shell:
-  -
-    command: bash -l './scripts/configure-iterm.sh'
-    description: Installing fish iTerm integration
-    stdout: true
-    stderr: true
-
-
+    - command: bash -l './scripts/configure-iterm.sh'
+      description: Installing fish iTerm integration
+      stdout: true
+      stderr: true

@@ -1,16 +1,22 @@
 # Setting up vscode:
+- shell:
+    - command: bash -l './packages/vscode-extensions.sh'
+      description: Installing vscode extensions
+      stdout: true
+      stderr: true
+
 - link:
     # macos:
     "~/Library/Application Support/Code/User/settings.json":
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: vscode/settings.json
       create: true
     "~/Library/Application Support/Code/User/keybindings.json":
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: vscode/keybindings.json
       create: true
     "~/Library/Application Support/Code/User/snippets":
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: vscode/snippets
       create: true
 

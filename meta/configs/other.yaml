@@ -28,5 +28,5 @@
     ~/.sqliterc: dotfiles/sqliterc
 
     # Editors:
-    ~/.editorconfig: dotfiles/editorconfig
+    ~/.editorconfig: .editorconfig
 

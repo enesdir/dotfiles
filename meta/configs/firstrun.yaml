@@ -1,0 +1,32 @@
+- clean:
+    - "~"
+    - "~/.config"
+    - "~/.config/brew"
+    - "~/.config/fish"
+    - "~/.config/fish/completions"
+    - "~/.config/fish/conf.d"
+    - "~/.config/fish/functions"
+    - "~/.config/git"
+    - "~/.config/npm"
+    - "~/.gnupg"
+    - "~/.local/share/history"
+    - "~/.ssh"
+    - "~/.ssh/config.d"
+
+- defaults:
+    link:
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+
+- create:
+    - "~/.config"
+    - "~/dev"
+    - "~/.cache/npm"
+    - "~/.cache/pip"
+    - "~/.config"
+    - "~/.local/bin"
+    - "~/.local/share/history"

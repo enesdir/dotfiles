@@ -6,7 +6,6 @@
       description: Installing npm global packages
       stdout: true
       stderr: true
-    - command: bash -l './packages/vscode-extensions.sh'
-      description: Installing vscode extensions
-      stdout: true
-      stderr: true
+
+- link:
+    ~/.config/npm/.npmrc: config/npm/.npmrc

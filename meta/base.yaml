@@ -1,19 +1,12 @@
 - defaults:
     link:
-        relink: true
-        create: true
-        force: true
+      relink: true
+      create: true
+      force: true
     shell:
-        stdout: true
-        stderr: true
-
-- create:
-    - $HOME/.config
-    - $HOME/dev
-
-- clean:
-    $HOME:
-        force: true
-    $HOME/.config:
-        recursive: true
-        exclude: $HOME/.config/fish/.iterm2_shell_integration.fish
+      stdout: true
+      stderr: true
+# - clean:
+#     $HOME/.config:
+#       recursive: true
+#       exclude: "~/.config/fish/.iterm2_shell_integration.fish"

@@ -1,7 +1,14 @@
+# Git config files
+- clean:
+    - "~/.config/config"
+    - "~/.config/.gitconfig_local"
+    - "~/.config/ignore"
+    - "~/.config/attributes"
+    - "~/.config/message"
+
 - link:
-    # Git:
-    ~/.gitconfig: dotfiles/gitconfig
-    ~/.gitconfig_local: dotfiles/gitconfig_local
-    ~/.gitignore_global: dotfiles/gitignore
-    ~/.gitattributes_global: dotfiles/gitattributes
-    ~/.gitmessage_global: dotfiles/gitmessage
+    ~/.config/git/config: config/git/gitconfig
+    ~/.config/git/.gitconfig_local: config/git/gitconfig_local
+    ~/.config/git/ignore: config/git/gitignore
+    ~/.config/git/attributes: config/git/gitattributes
+    ~/.config/git/message: config/git/gitmessage

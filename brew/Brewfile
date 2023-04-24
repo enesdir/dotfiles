@@ -21,8 +21,11 @@ brew "diffutils"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-#  GitHub’s official command line tool
+# GitHub’s official command line tool
 brew "gh"
+# Automatically trims your branches whose tracking remote refs are merged or stray
+# https://github.com/foriequal0/git-trim
+brew "git-trim"
 # Good-lookin" diffs with diff-highlight and more
 brew "diff-so-fancy"
 
@@ -39,10 +42,15 @@ brew "java"
 # Node Version Manager
 brew "fnm"
 
+# Python
+brew "python"
 brew "pyenv"
 brew "virtualenv"
 brew "pyenv-virtualenv"
-brew "python"
+# pipx — Install and Run Python Applications in Isolated Environments
+brew "pipx"
+
+# sqlite
 brew "sqlite"
 
 # System related
