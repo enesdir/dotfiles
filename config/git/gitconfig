@@ -200,7 +200,7 @@
 
 [commit]
 
-    template = ~/.gitmessage_global
+    template = ~/.config/git/message
     gpgsign = false
 
 [pager]
@@ -240,10 +240,8 @@
 [url "git@github.com:"]
 
     insteadOf = https://github.com/
-
-# This is set in ~/.gitconfig_local but duplicated here as gets added automatically
-[user]
-	name = Enes Esen
-	email = enesen@gmx.com
+    
+[include]
+    path = "~/.config/git/.gitconfig_personal"
 [init]
 	defaultBranch = main

@@ -17,9 +17,6 @@ abbr bwre brew
 abbr gti git
 abbr yearn yarn
 
-# Gitconfig.user
-test -e $HOME/.gitconfig_local ; and source $HOME/.gitconfig_local
-
 # Need to install gh via Homebrew
 # See: https://github.com/cli/cli
 test -x (brew --prefix)/bin/gh   ; and function g  ; git $argv ; end
@@ -95,6 +92,11 @@ set -U fish_user_paths (yarn global bin) $fish_user_paths
 
 # Global env
 set -x -g NODE_OPTIONS --max_old_space_size=8192
+
+# Read env secrets (Must be git-ignored)
+if test -e "$XDG_CONFIG_HOME/env/env.fish"
+    source "$XDG_CONFIG_HOME/env/env.fish"
+end
 
 # iTerm Shell Integration
 source ~/.config/fish/.iterm2_shell_integration.fish

@@ -1,2 +1,2 @@
-# Do not show lock files changes in `git diff`:
+# Do not show lock files changes in `git diff`
 *.lock    diff=nodiff

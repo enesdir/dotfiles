@@ -89,7 +89,9 @@ And some productivity hacks!
 - configs folder - Configuration files for each program
 - profiles folder - Summarize configs configurations in profiles
 
-### Fish (fish/)
+### Configs (config/)
+
+#### Fish (config/fish/)
 
 - config.fish - Global fish configuration (.fishrc)
 - omf folder - List of `omf` plugins & themes
@@ -107,6 +109,13 @@ And some productivity hacks!
   - repodir.fish - Finds a repository in `~/dev` and prints its path
   - update.fish - Installs OS X Software Updates, Homebrew, npm, and their installed packages
   - week.fish - Returns the current week number
+
+#### Git configuration(config/git)
+
+- `gitignore` - Contains global gitignores, such as OS-specific files and
+several compiled files
+- `gitconfig` - Sets several global Git variables
+- `~/.gitconfig_personal` to store any user-specific data
 
 ### macOS Preferences (macos/)
 
@@ -142,16 +151,16 @@ Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packa
 
 ### Local configuration(dotfiles/)
 
-- gitignore_global - Contains global gitignores, such as OS-specific files and
-several compiled files
-- gitconfig - Sets several global Git variables
+Some of the used tools requires local configuration.
 
-Some of the used tools requires local configuration. Such as `git` with username and email.
+### Set your enviroment
 
-Here's the full list:
+- Before beginning, please make sure you have the following enviroment variable set.
+  We are provided example enviroment variables in root directory
 
-1. `~/.gitconfig_local` to store any user-specific data
-2. `~/.shell_env_local` to store local shell config, like: usernames, passwords, tokens, `gpg` keys and so on
+    ```shell
+    cp .env.example ~/.config/env/.env.fish
+    ```
 
 ## Inspiration (thanks!)
 

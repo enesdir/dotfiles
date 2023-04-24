@@ -1,14 +1,16 @@
 # Git config files
 - clean:
     - "~/.config/config"
-    - "~/.config/.gitconfig_local"
+    - "~/.config/.gitconfig_personal"
     - "~/.config/ignore"
     - "~/.config/attributes"
     - "~/.config/message"
 
 - link:
+    # Git config files
     ~/.config/git/config: config/git/gitconfig
-    ~/.config/git/.gitconfig_local: config/git/gitconfig_local
     ~/.config/git/ignore: config/git/gitignore
     ~/.config/git/attributes: config/git/gitattributes
     ~/.config/git/message: config/git/gitmessage
+    # Git extra config
+    ~/.config/git/.gitconfig_personal: config/git/gitconfig_personal
