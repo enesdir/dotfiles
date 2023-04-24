@@ -4,10 +4,6 @@ set -x -g LS_COLORS "di=38;5;27:fi=38;5;7:ln=38;5;51:pi=40;38;5;11:so=38;5;13:or
 
 # set -x -g LC_ALL en_GB.UTF-8
 # set -x -g LANG en_GB.UTF-8
-set fish_greeting
-
-set -g theme_nerd_fonts yes
-set -g theme_color_scheme nord
 
 # Paths
 # test -d $HOME/dotfiles/bin                              ; and set PATH $HOME/dotfiles/bin $PATH
@@ -20,42 +16,6 @@ test -x /usr/local/share/git-core/contrib/diff-highlight  ; and set PATH /usr/lo
 abbr bwre brew
 abbr gti git
 abbr yearn yarn
-
-# Recursively delete `.DS_Store` files
-alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
-
-# File size
-alias fs="stat -f \"%z bytes\""
-
-# Navigation
-function ..    ; cd .. ; end
-function ...   ; cd ../../ ; end
-function ....  ; cd ../../../ ; end
-function ..... ; cd ../../../../ ; end
-function ......; cd ../../../../../ ; end
-
-# Navigation for me
-function dt       ; cd $HOME/Desktop ; end
-function rnwork   ; cd $HOME/dev/rnwork ; end
-function other    ; cd $HOME/dev/other ; end
-function mypj     ; cd $HOME/dev/mypj ; end
-function pj       ; cd $HOME/dev/pj ; end
-
-# Utilities
-function mv        ; gmv --interactive --verbose $argv ; end
-function rm        ; grm --interactive --verbose $argv ; end
-function cp        ; gcp --interactive --verbose $argv ; end
-function d         ; du -h -d=1 $argv ; end
-function dig       ; dig +nocmd any +multiline +noall +answer ; end
-function grep      ; command grep --color=auto $argv ; end
-function httpdump  ; sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*" ; end
-function ip        ; curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g' ; end
-function localip   ; ipconfig getifaddr en0 ; end
-function sniff     ; sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80' ; end
-function urlencode ; python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);" ; end
-function h         ; history ; end
-function j         ; jobs ; end
-function v         ; vim ; end
 
 # Gitconfig.user
 test -e $HOME/.gitconfig_local ; and source $HOME/.gitconfig_local
@@ -80,7 +40,13 @@ test -x (brew --prefix)/bin/tree ; and function ll ; tree --dirsfirst -ChFupDaLg
 
 # Python
 # See: https://github.com/pyenv/pyenv#homebrew-on-mac-os-x
-test -x (brew --prefix)/bin/pyenv ; and pyenv init - | source
+if test -d (brew --prefix)/bin/pyenv
+   pyenv init - | source
+   status --is-interactive; and pyenv virtualenv-init - | source
+   set -gx PIP_REQUIRE_VIRTUALENV true
+set -gx PIP_DEFAULT_TIMEOUT 30
+set -gx PIP_CACHE_DIR "$XDG_CACHE_HOME/pip"
+end
 
 # Java
 # See: http://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
@@ -117,12 +83,6 @@ set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 
 # Composer
 # set -x -g PATH ~/.composer/vendor/bin $PATH
-
-if type -q fd
-  set -gx FZF_DEFAULT_COMMAND "fish -c 'begin; git ls-tree -r --name-only HEAD; git ls-files --others --exclude-standard; git diff --name-only --staged; end | sort -u || fd --type f --type l --hidden --follow --exclude .git' 2> /dev/null"
-  set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-  set -gx FZF_DEFAULT_OPTS "--no-mouse -1 --multi --info=inline"
-end
 
 # fnm
 # set -x -g PATH ~/.fnm $PATH

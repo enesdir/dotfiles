@@ -40,6 +40,8 @@ brew "java"
 brew "fnm"
 
 brew "pyenv"
+brew "virtualenv"
+brew "pyenv-virtualenv"
 brew "python"
 brew "sqlite"
 
