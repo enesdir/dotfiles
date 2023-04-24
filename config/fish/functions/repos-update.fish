@@ -1,6 +1,6 @@
 function repos-update --description 'Development projects update'
     pushd (pwd)
-    cd $DEVELOPMENT_DIR
+    cd $DEVELOPMENT_DIR/$argv
     set -l trunk_branches master develop main
     for project in */
         echo "Updating project $project"
