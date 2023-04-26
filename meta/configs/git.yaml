@@ -1,7 +1,6 @@
 # Git config files
 - clean:
     - "~/.config/config"
-    - "~/.config/.gitconfig_personal"
     - "~/.config/ignore"
     - "~/.config/attributes"
     - "~/.config/message"
@@ -12,5 +11,9 @@
     ~/.config/git/ignore: config/git/gitignore
     ~/.config/git/attributes: config/git/gitattributes
     ~/.config/git/message: config/git/gitmessage
-    # Git extra config
-    ~/.config/git/.gitconfig_personal: config/git/gitconfig_personal
+# Git extra config
+- shell:
+    - command: fish './scripts/configure-git.fish'
+      description: Installing fish iTerm integration
+      stdout: true
+      stderr: true

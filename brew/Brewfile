@@ -9,11 +9,11 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
 # Install GNU core utilities (those that come with OS X are outdated).
-# brew "coreutils"
+brew "coreutils"
 # Install some other useful utilities like `sponge`.
 brew "moreutils"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-# brew "findutils"
+brew "findutils"
 # Install File comparison utilities
 brew "diffutils"
 

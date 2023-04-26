@@ -240,8 +240,8 @@
 [url "git@github.com:"]
 
     insteadOf = https://github.com/
-    
+
 [include]
-    path = "~/.config/git/.gitconfig_personal"
+    path = "~/.config/git/gitconfig_personal"
 [init]
 	defaultBranch = main

@@ -1,4 +1,0 @@
-[user]
-    name = $GIT_COMITTER_NAME
-    email = $GIT_AUTHOR_MAIL
-
