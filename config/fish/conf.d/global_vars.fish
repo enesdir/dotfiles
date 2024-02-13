@@ -10,6 +10,7 @@ set -x -g LANG en_US.UTF-8
 
 # Development projects folder
 set -q DEVELOPMENT_DIR; or set -gx DEVELOPMENT_DIR "$HOME/dev"
+#test -d $HOME/dev ; and set -gx DEVELOPMENT_DIR  "$HOME/dev"
 
 # Ensure XDG variables are set
 set -q XDG_CONFIG_HOME; or set -gx XDG_CONFIG_HOME "$HOME/.config"

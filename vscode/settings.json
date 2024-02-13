@@ -29,7 +29,7 @@
   "editor.folding": false,
   "editor.glyphMargin": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
@@ -91,14 +91,11 @@
   "git.showInlineOpenFileAction": false,
   "git.autorefresh": true,
   "git.decorations.enabled": true,
-
-  // Theme:
-  "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "vscode-icons",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.labelFormat": "short",
 
   "workbench.editorAssociations": {
@@ -139,8 +136,6 @@
   // eslint
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
-
-  "diffEditor.ignoreTrimWhitespace": false,
   // Todo tree
   "todo-tree.general.tags": [
     "BUG",
@@ -206,5 +201,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "svg.preview.mode": "svg",
-  "genieai.enableConversationHistory": true
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "totalTypeScript.hiddenTips": [
+    "generic-slots-in-functions",
+    "passing-generics-to-types",
+    "omit-utility-type",
+    "type-alias-with-generics"
+  ],
+  "vite.autoStart": false,
+  "workbench.colorTheme": "One Dark Pro Mix",
+  "telemetry.telemetryLevel": "off",
+  "diffEditor.ignoreTrimWhitespace": false
 }

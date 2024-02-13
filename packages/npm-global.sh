@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-npm install -g npm
-npm install -g yarn
-npm install -g ts-node
-npm install -g typescript
-npm install -g expo-cli
-npm install -g firebase-tools
+npm install -g npm@latest
+npm install -g yarn@latest
+npm install -g pnpm@latest
+npm install -g @angular/cli@latest
+npm install -g typescript@latest
+npm install -g ts-node@latest
