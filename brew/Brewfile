@@ -117,7 +117,7 @@ cask "kap"
 cask "the-unarchiver"
 
 # Java Development Kit
-cask "adoptopenjdk/openjdk/adoptopenjdk13"
+cask "temurin"
 
 # Editors
 cask "visual-studio-code"

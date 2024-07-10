@@ -35,6 +35,27 @@
   "editor.guides.bracketPairs": "active",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "a": true,
+    "а": true,
+    "А": true,
+    "б": true,
+    "В": true,
+    "е": true,
+    "Е": true,
+    "з": true,
+    "З": true,
+    "і": true,
+    "І": true,
+    "н": true,
+    "Н": true,
+    "о": true,
+    "р": true,
+    "Р": true,
+    "с": true,
+    "у": true,
+    "У": true
+  },
 
   // Files:
   "files.autoSave": "onWindowChange",
@@ -81,6 +102,7 @@
   "search.exclude": {
     "**/bower_components": true,
     "**/node_modules": true,
+    "**/node_modulesDISABLE": true,
     "package-lock.json": true,
     "yarn.lock": true
   },
@@ -91,7 +113,7 @@
   "git.showInlineOpenFileAction": false,
   "git.autorefresh": true,
   "git.decorations.enabled": true,
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "pop-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.editor.highlightModifiedTabs": true,
@@ -147,8 +169,20 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-
+  // tsEssentialPlugins
+  "tsEssentialPlugins.fixSuggestionsSorting": true,
+  "tsEssentialPlugins.globalLibCompletions.action": "mark",
+  "tsEssentialPlugins.patchOutline": true,
+  "tsEssentialPlugins.outline.arraysTuplesNumberedItems": true,
+  "tsEssentialPlugins.renameImportNameOfFileRename": true,
+  "tsEssentialPlugins.signatureHelp.excludeBlockScope": true,
+  "tsEssentialPlugins.skipNodeModulesReferences": true,
+  "tsEssentialPlugins.suggestions.localityBonus": true,
+  "tsEssentialPlugins.tupleHelpSignature": true,
+  "tsEssentialPlugins.jsxEmmet.modernize": true,
+  "tsEssentialPlugins.arrayMethodsSnippets.enable": true,
   //Code Spell
+  "cSpell.enabled": true,
   "cSpell.enableFiletypes": [
     "!asciidoc",
     "!c",
@@ -186,12 +220,19 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescriptreact]": {
+  "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+
   "editor.accessibilitySupport": "off",
   "editor.guides.indentation": true,
   "editor.unicodeHighlight.allowedLocales": {
@@ -203,6 +244,12 @@
   "svg.preview.mode": "svg",
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  // markdownlint
+  "markdownlint.config": {
+    "MD033": {
+      "allowed_elements": ["img", "p", "a", "details", "summary"]
+    }
   },
   "totalTypeScript.hiddenTips": [
     "generic-slots-in-functions",
