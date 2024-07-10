@@ -1,13 +1,13 @@
-# codenuru's dotfiles
+# enesdir's dotfiles
 
-![codenuru's dotfiles](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/iterm.png)
+![enesdir's dotfiles](https://raw.githubusercontent.com/enesdir/dotfiles/master/media/iterm.png)
 
 ## Summary
 
 What's in there?
 
-- all my `brew` dependencies including: applications, fonts, etc. See [`Brewfile`](https://github.com/codenuru/dotfiles/blob/main/brew/Brewfile)
-- all my `macOS` configuration. See [`macos`](https://github.com/codenuru/dotfiles/tree/main/macos/)
+- all my `brew` dependencies including: applications, fonts, etc. See [`Brewfile`](https://github.com/enesdir/dotfiles/blob/main/brew/Brewfile)
+- all my `macOS` configuration. See [`macos`](https://github.com/enesdir/dotfiles/tree/main/macos/)
 - all my `vscode` configuration. See `vscode/`
 
 ## Installation
@@ -25,7 +25,7 @@ to set things up. Steps:
 1. Clone this repo
 
   ```bash
-  git clone --recursive https://github.com/codenuru/dotfiles .dotfiles
+  git clone --recursive https://github.com/enesdir/dotfiles .dotfiles
   ```
 
 2. `cd` into `dotfiles/` folder
@@ -119,25 +119,25 @@ several compiled files
 
 ### macOS Preferences (macos/)
 
-- [`settings.sh`](https://github.com/codenuru/dotfiles/blob/master/macos/settings.sh)  - Executes a long list of commands pertaining to macOS Preferences
+- [`settings.sh`](https://github.com/enesdir/dotfiles/blob/master/macos/settings.sh)  - Executes a long list of commands pertaining to macOS Preferences
 
 ### Packages (packages/)
 
-- [`npm-global.sh`](https://github.com/codenuru/dotfiles/blob/master/packages/npm-global.sh)         - Installs the npm global packages
-- [`vscode-extension.sh`](https://github.com/codenuru/dotfiles/blob/master/packages/vscode-extension.sh)   - Installs the vscode extensions
-- [`yarn-global.sh`](https://github.com/codenuru/dotfiles/blob/master/packages/yarn-global.sh)        - Installs the yarn global packages
+- [`npm-global.sh`](https://github.com/enesdir/dotfiles/blob/master/packages/npm-global.sh)         - Installs the npm global packages
+- [`vscode-extension.sh`](https://github.com/enesdir/dotfiles/blob/master/packages/vscode-extension.sh)   - Installs the vscode extensions
+- [`yarn-global.sh`](https://github.com/enesdir/dotfiles/blob/master/packages/yarn-global.sh)        - Installs the yarn global packages
 
 ### Helper Scripts (scripts/)
 
-- [`configure-iterm.sh`](https://github.com/codenuru/dotfiles/blob/master/scripts/configure-iterm.sh)  - Fish iTerm integration
-- [`configure-ssh.sh`](https://github.com/codenuru/dotfiles/blob/master/scripts/configure-ssh.sh) - Secure ssh folder after installation and copy your ssh key into the `~/.ssh` folder
-- [`install-omf.sh`](https://github.com/codenuru/dotfiles/blob/master/scripts/install-omf.sh) - Install omf and omf plugins
+- [`configure-iterm.sh`](https://github.com/enesdir/dotfiles/blob/master/scripts/configure-iterm.sh)  - Fish iTerm integration
+- [`configure-ssh.sh`](https://github.com/enesdir/dotfiles/blob/master/scripts/configure-ssh.sh) - Secure ssh folder after installation and copy your ssh key into the `~/.ssh` folder
+- [`install-omf.sh`](https://github.com/enesdir/dotfiles/blob/master/scripts/install-omf.sh) - Install omf and omf plugins
 
 ### Apps(brew/)
 
 I am using `brew` to install all free apps for my mac.
 I also sync apps from AppStore with `brew`,
-so the resulting [`Brewfile`](https://github.com/codenuru/dotfiles/blob/master/brew/Brewfile) contains everything.
+so the resulting [`Brewfile`](https://github.com/enesdir/dotfiles/blob/master/brew/Brewfile) contains everything.
 
 ### VS Code(vscode/)
 
@@ -145,9 +145,9 @@ I loved my `Visual Studio Code`. It is fast and beautiful.
 
 Here's how my new `vscode` setup looks like:
 
-![codenuru's vscode for Python](https://raw.githubusercontent.com/codenuru/dotfiles/master/media/vscode.png)
+![enesdir's vscode for Python](https://raw.githubusercontent.com/enesdir/dotfiles/master/media/vscode.png)
 
-Here's [a list of packages](https://github.com/codenuru/dotfiles/blob/main/packages/vscode-extensions.sh)
+Here's [a list of packages](https://github.com/enesdir/dotfiles/blob/main/packages/vscode-extensions.sh)
 
 ### Local configuration(dotfiles/)
 
