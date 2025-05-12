@@ -117,7 +117,7 @@ cask "exifcleaner"
 cask "the-unarchiver"
 
 # Java Development Kit
-#cask "temurin"
+cask "temurin"
 
 # Editors
 cask "visual-studio-code"

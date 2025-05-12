@@ -28,5 +28,6 @@
     - "~/.cache/npm"
     - "~/.cache/pip"
     - "~/.config"
+    - "~/.config/env"
     - "~/.local/bin"
     - "~/.local/share/history"

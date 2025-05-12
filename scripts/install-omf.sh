@@ -66,9 +66,9 @@ exec fish -l
 # See: https://github.com/oh-my-fish/oh-my-fish#installation
 install_omf() {
   echo "Install oh-my-fish "
-  if ! type_exists "omf"; then
+  if ! _oh_my_fish_command_exists "omf"; then
     echo "Installing oh-my-fish"
-    curl -L https://get.oh-my.fish | fish
+    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
   else
     echo "Done. oh-my-fish already installed"
   fi

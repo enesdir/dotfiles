@@ -44,3 +44,13 @@ Package Control.cache/
 WakaTime.sublime-settings
 .vscode/tags
 brew/Brewfile.lock.json
+
+# SSH private keys - never commit these
+*.pem
+*.key
+*.ppk
+*id_rsa
+*id_ecdsa
+*id_ed25519
+*.pub
+known_hosts

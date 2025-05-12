@@ -1,7 +1,7 @@
 - shell:
     - brew cleanup
     - [fnm install --lts, install latest LTS node]
-    - [fnm alias default "$(node -v), Set this Node version as the default]
+    - [fnm alias default $(node -v), Set this Node version as the default]
     - command: bash -l './packages/npm-global.sh'
       description: Installing npm global packages
       stdout: true

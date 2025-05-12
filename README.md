@@ -56,7 +56,7 @@ bash ./install-standalone <configs...>
 bash -l './scripts/configure-ssh.sh'
 ```
 
-5. oh-my-fish installation
+5. oh-my-fish installation (not working macos)
 
 ```bash
 bash -l './scripts/install-omf.sh'
@@ -115,7 +115,7 @@ And some productivity hacks!
 - `gitignore` - Contains global gitignores, such as OS-specific files and
 several compiled files
 - `gitconfig` - Sets several global Git variables
-- `~/.gitconfig_personal` to store any user-specific data
+- `gitconfig_personal` to store any user-specific data
 
 ### macOS Preferences (macos/)
 
@@ -159,7 +159,7 @@ Some of the used tools requires local configuration.
   We are provided example enviroment variables in root directory
 
     ```shell
-    cp .env.example ~/.config/env/.env.fish
+    cp .env.fish.example ~/.config/env/.env.fish
     ```
 
 ## Inspiration (thanks!)
