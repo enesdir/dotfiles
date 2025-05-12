@@ -2,20 +2,20 @@
 # Taps
 ####################
 # "brew tap"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
+#tap "homebrew/cask"
+#tap "homebrew/core"
+#tap "homebrew/services"
 # Fonts
-tap "homebrew/cask-fonts"
+#tap "homebrew/cask-fonts"
 
 # Install GNU core utilities (those that come with OS X are outdated).
-brew "coreutils"
+#brew "coreutils"
 # Install some other useful utilities like `sponge`.
-brew "moreutils"
+#brew "moreutils"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew "findutils"
+#brew "findutils"
 # Install File comparison utilities
-brew "diffutils"
+#brew "diffutils"
 
 ## Version Control
 brew "git"
@@ -34,22 +34,22 @@ brew "diff-so-fancy"
 brew "fish"
 
 # Node
-brew "node"
+#brew "node"
 
 # Java (OpenJDK) Java Development Kit
-brew "java"
+#brew "java"
 
 # Node Version Manager
 brew "fnm"
 
 # Python
-brew "python"
-brew "virtualenv"
+#brew "python"
+#brew "virtualenv"
 # pipx — Install and Run Python Applications in Isolated Environments
-brew "pipx"
+#brew "pipx"
 
 # sqlite
-brew "sqlite"
+#brew "sqlite"
 
 # System related
 # Install other useful binaries.
@@ -80,7 +80,7 @@ brew "watchman"
 brew "brew-cask-completion"
 brew "thefuck"
 # Sentry command line tool
-brew "install getsentry/tools/sentry-cli"
+# brew "install getsentry/tools/sentry-cli"
 
 ####################
 # Cask
@@ -90,45 +90,44 @@ brew "install getsentry/tools/sentry-cli"
 # "brew install --cask"
 # Browser
 cask "firefox"
-cask "chromium"
+# cask "chromium"
 
 # Terminals
 cask "iterm2"
 
 # Chat / IM
-cask "discord"
-cask "slack"
+#cask "discord"
+#cask "slack"
 
 # Chat / IM
-cask "vlc"
-cask "spotify"
+#cask "vlc"
+#cask "spotify"
 
 # Misc
-cask "postman"
+# cask "postman"
 # window manager
-cask "rectangle"
+# cask "rectangle"
 cask "the-unarchiver"
-cask "docker"
-cask "netnewswire"
+# cask "docker"
+#cask "netnewswire"
 # Cross-platform desktop GUI app to clean image metadata
 cask "exifcleaner"
 # An open-source screen recorder built with web technology.
-cask "kap"
+#cask "kap"
 cask "the-unarchiver"
 
 # Java Development Kit
-cask "temurin"
+#cask "temurin"
 
 # Editors
 cask "visual-studio-code"
-cask "atom"
+cask "vscodium"
 # Android Studio provides the fastest tools for building apps on every type of Android device.
-cask "android-studio"
+#cask "android-studio"
 
 # Fonts
 cask "font-hack-nerd-font"
 cask "font-anonymous-pro"
-cask "font-blex-mono-nerd-font"
 cask "font-fira-code-nerd-font"
 cask "font-fira-code"
 cask "font-fira-mono"
@@ -138,7 +137,7 @@ cask "font-fira-sans"
 # Mas
 ####################
 # Mac App Store applications
-brew "mas"
+# brew "mas"
 
 # "mas install"
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835

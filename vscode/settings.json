@@ -20,19 +20,15 @@
   "editor.renderWhitespace": "boundary",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  // "editor.fontFamily": "Fira Code Retina",
   "editor.fontFamily": "FiraCode-Retina",
   "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontSize": 16,
   "editor.lineHeight": 26,
   "editor.dragAndDrop": false,
-  "editor.folding": false,
   "editor.glyphMargin": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "editor.unicodeHighlight.allowedCharacters": {
@@ -258,7 +254,48 @@
     "type-alias-with-generics"
   ],
   "vite.autoStart": false,
-  "workbench.colorTheme": "One Dark Pro Mix",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "telemetry.telemetryLevel": "off",
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "chat.agent.enabled": true,
+  "editor.language.brackets": [
+    {
+      "open": "[",
+      "close": "]",
+      "notIn": ["string", "comment"]
+    },
+    {
+      "open": "{",
+      "close": "}",
+      "notIn": ["string", "comment"]
+    },
+    {
+      "open": "(",
+      "close": ")",
+      "notIn": ["string", "comment"]
+    },
+    {
+      "open": "<",
+      "close": ">",
+      "notIn": ["string", "comment"]
+    }
+  ],
+  "editor.linkedEditing": true,
+  "editor.smoothScrolling": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  "files.trimFinalNewlines": true,
+  "extensions.closeExtensionDetailsOnViewChange": true,
+  "editor.showFoldingControls": "always",
+  "terminal.integrated.gpuAcceleration": "off",
+  "editor.colorDecorators": false,
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "editor.bracketPairColorization.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescript": false
+  }
 }
