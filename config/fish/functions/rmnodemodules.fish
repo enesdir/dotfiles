@@ -48,4 +48,8 @@ function rmnodemodules --description 'This function cleans up a selected directo
     deleteItems "dist" "d"
     # Delete all dev-dist directories
     deleteItems "dev-dist" "d"
+    # Delete all output directories
+    deleteItems ".output" "d"
+    # Delete all tanstack directories
+    deleteItems ".tanstack" "d"
 end

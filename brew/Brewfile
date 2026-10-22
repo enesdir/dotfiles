@@ -111,10 +111,9 @@ cask "the-unarchiver"
 # cask "docker"
 #cask "netnewswire"
 # Cross-platform desktop GUI app to clean image metadata
-cask "exifcleaner"
+# cask "exifcleaner"
 # An open-source screen recorder built with web technology.
 #cask "kap"
-cask "the-unarchiver"
 
 # Java Development Kit
 cask "temurin"

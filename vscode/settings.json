@@ -128,8 +128,31 @@
   "telemetry.enableTelemetry": false,
 
   "terminal.integrated.rendererType": "dom",
-  "terminal.integrated.defaultProfile.osx": "/usr/local/bin/fish",
-  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "path": "pwsh",
+      "args": ["-Nologo"],
+      "icon": "terminal-powershell"
+    }
+  },
 
   // Tools, extensions, and languages:
   "python.linting.pylintEnabled": true,
@@ -153,18 +176,7 @@
   "prettier.semi": false,
   // eslint
   "eslint.alwaysShowStatus": true,
-  "eslint.format.enable": true,
-  // Todo tree
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
   // tsEssentialPlugins
   "tsEssentialPlugins.fixSuggestionsSorting": true,
   "tsEssentialPlugins.globalLibCompletions.action": "mark",
@@ -207,54 +219,13 @@
     "rocketseat",
     "upsert"
   ],
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
 
   "editor.accessibilitySupport": "off",
   "editor.guides.indentation": true,
   "editor.unicodeHighlight.allowedLocales": {
     "tr": true
   },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "svg.preview.mode": "svg",
-  "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  },
-  // markdownlint
-  "markdownlint.config": {
-    "MD033": {
-      "allowed_elements": ["img", "p", "a", "details", "summary"]
-    }
-  },
-  "totalTypeScript.hiddenTips": [
-    "generic-slots-in-functions",
-    "passing-generics-to-types",
-    "omit-utility-type",
-    "type-alias-with-generics"
-  ],
   "vite.autoStart": false,
-  "workbench.colorTheme": "One Dark Pro Darker",
   "telemetry.telemetryLevel": "off",
   "diffEditor.ignoreTrimWhitespace": false,
   "chat.agent.enabled": true,
@@ -289,7 +260,7 @@
   "editor.showFoldingControls": "always",
   "terminal.integrated.gpuAcceleration": "off",
   "editor.colorDecorators": false,
-  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.preferredDarkColorTheme": "Dark+",
   "editor.bracketPairColorization.enabled": false,
   "github.copilot.enable": {
     "*": false,
@@ -297,5 +268,30 @@
     "markdown": false,
     "scminput": false,
     "typescript": false
-  }
+  },
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "codeium.enableConfig": {
+    "*": true,
+    "dotenv": true,
+    "properties": true
+  },
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true
+  },
+  "js/ts.experimental.useTsgo": true,
+  "i18n-ally.displayLanguage": "en",
+  "claudeCode.preferredLocation": "panel"
 }
